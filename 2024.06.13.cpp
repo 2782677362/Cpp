@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-////ÓÑÔª
+////å‹å…ƒ
 //class Time {
-//	friend class Date;//ÓÑÔªÀà£¬ÈÕÆÚÀàÖĞ¿ÉÒÔÖ±½Ó·ÃÎÊÊ±¼äÀàÖĞµÄË½ÓĞ¶ÔÏó
+//	friend class Date;//å‹å…ƒç±»ï¼Œæ—¥æœŸç±»ä¸­å¯ä»¥ç›´æ¥è®¿é—®æ—¶é—´ç±»ä¸­çš„ç§æœ‰å¯¹è±¡
 //public:
 //	Time(int hour = 1, int minute = 1, int second = 1)
 //		:_hour(hour)
@@ -20,7 +20,7 @@ using namespace std;
 //	int _second;
 //};
 //class Date {
-//	friend ostream& operator<<(ostream& out, const Date& d);// ÓÑÔªº¯Êı£ºº¯ÊıÉùÃ÷Ç°¼Ófriend
+//	friend ostream& operator<<(ostream& out, const Date& d);// å‹å…ƒå‡½æ•°ï¼šå‡½æ•°å£°æ˜å‰åŠ friend
 //	friend istream& operator>>(istream& in, Date& d);
 //
 //public:
@@ -40,7 +40,7 @@ using namespace std;
 //		t._second++;
 //	}
 //
-//	//ÄÚ²¿Àà,BÌìÉú¾ÍÊÇDateµÄÓÑÔªÀà
+//	//å†…éƒ¨ç±»,Bå¤©ç”Ÿå°±æ˜¯Dateçš„å‹å…ƒç±»
 //	class B {
 //	public:
 //		B()
@@ -86,7 +86,7 @@ using namespace std;
 
 
 
-//C++ÖĞµÄÄÚ´æ¹ÜÀí
+//C++ä¸­çš„å†…å­˜ç®¡ç†
 int main()
 {
 	//C:
@@ -97,21 +97,21 @@ int main()
 	free(p2);
 
 	//C++:
-	int* p3 = new int;        //¶¯Ì¬ÉêÇëÒ»¸öintÀàĞÍµÄ¿Õ¼ä
-	int* p31 = new int(10);   //¶¯Ì¬ÉêÇëÒ»¸öintÀàĞÍµÄ¿Õ¼ä²¢³õÊ¼»¯Îª10
-	int* p4 = new int[10];    //¶¯Ì¬ÉêÇë10¸öintÀàĞÍµÄ¿Õ¼ä
+	int* p3 = new int;        //åŠ¨æ€ç”³è¯·ä¸€ä¸ªintç±»å‹çš„ç©ºé—´
+	int* p31 = new int(10);   //åŠ¨æ€ç”³è¯·ä¸€ä¸ªintç±»å‹çš„ç©ºé—´å¹¶åˆå§‹åŒ–ä¸º10
+	int* p4 = new int[10];    //åŠ¨æ€ç”³è¯·10ä¸ªintç±»å‹çš„ç©ºé—´
 
 	delete p3;
 	delete[] p4;
 
 	return 0;
 }
-// malloc calloc reallocµÄÇø±ğ£¿  
-// mallocÔ­ĞÍ:void *malloc(unsigned int num_bytes);ÉêÇënum_bytes´óĞ¡¿Õ¼ä
-// callocÔ­ĞÍ:void *calloc(size_t n, size_t size);ÉêÇën*size´óĞ¡¿Õ¼ä£¬²¢½«¿Õ¼äÈ«²¿³õÊ¼»¯Îª0
-// reallocÔ­ĞÍ:void realloc(void *ptr, size_t new_Size);¶Ô¶¯Ì¬ÄÚ´æ½øĞĞÀ©Èİ,ptrÎªÖ¸ÏòÔ­À´¿Õ¼äµØÖ·µÄÖ¸Õë,new_sizeÎª½ÓÏÂÀ´ĞèÒªÀ©³äÈİÁ¿µÄ´óĞ¡¡£
+// malloc calloc reallocçš„åŒºåˆ«ï¼Ÿ  
+// mallocåŸå‹:void *malloc(unsigned int num_bytes);ç”³è¯·num_byteså¤§å°ç©ºé—´
+// callocåŸå‹:void *calloc(size_t n, size_t size);ç”³è¯·n*sizeå¤§å°ç©ºé—´ï¼Œå¹¶å°†ç©ºé—´å…¨éƒ¨åˆå§‹åŒ–ä¸º0
+// reallocåŸå‹:void realloc(void *ptr, size_t new_Size);å¯¹åŠ¨æ€å†…å­˜è¿›è¡Œæ‰©å®¹,pträ¸ºæŒ‡å‘åŸæ¥ç©ºé—´åœ°å€çš„æŒ‡é’ˆ,new_sizeä¸ºæ¥ä¸‹æ¥éœ€è¦æ‰©å……å®¹é‡çš„å¤§å°ã€‚
 
-// ¼ÈÈ»ÒÑ¾­ÓĞÁËmallocºÍfree£¬ÄÇÃ´newºÍdeleteÓĞºÎÒâÒå£¿
-// ¶ÔÓÚÄÚÖÃÀàĞÍ(int,char,long...)Ğ§¹ûÒ»Ñù
-// ¶ÔÓÚ×Ô¶¨ÒåÀàĞÍ£¬Ğ§¹û²»Ò»Ñù£º
-// ÔÚÉêÇë×Ô¶¨ÒåÀàĞÍµÄ¿Õ¼äÊ±£¬newÉêÇë¿Õ¼ä+µ÷ÓÃ¹¹Ôìº¯Êı£¬deleteµ÷ÓÃÎö¹¹º¯Êı+ÊÍ·Å¿Õ¼ä£¬¶ømallocÓëfree²»»áµ÷ÓÃ¹¹Ôìº¯ÊıºÍÎö¹¹º¯Êı¡£
+// æ—¢ç„¶å·²ç»æœ‰äº†mallocå’Œfreeï¼Œé‚£ä¹ˆnewå’Œdeleteæœ‰ä½•æ„ä¹‰ï¼Ÿ
+// å¯¹äºå†…ç½®ç±»å‹(int,char,long...)æ•ˆæœä¸€æ ·
+// å¯¹äºè‡ªå®šä¹‰ç±»å‹ï¼Œæ•ˆæœä¸ä¸€æ ·ï¼š
+// åœ¨ç”³è¯·è‡ªå®šä¹‰ç±»å‹çš„ç©ºé—´æ—¶ï¼Œnewç”³è¯·ç©ºé—´+è°ƒç”¨æ„é€ å‡½æ•°ï¼Œdeleteè°ƒç”¨ææ„å‡½æ•°+é‡Šæ”¾ç©ºé—´ï¼Œè€Œmallocä¸freeä¸ä¼šè°ƒç”¨æ„é€ å‡½æ•°å’Œææ„å‡½æ•°ã€‚
