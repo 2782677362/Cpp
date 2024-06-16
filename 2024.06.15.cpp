@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-////Ä£°å
+////æ¨¡æ¿
 //template <class T>
 //class Vector {
 //public:
@@ -85,7 +85,7 @@ using namespace std;
 //}
 
 
-// string£º
+// stringï¼š
 int main()
 {
 	//string s1;
@@ -113,7 +113,7 @@ int main()
 
 
 	//string st("hello world");
-	//// ±éÀú1£ºÏÂ±ê£«[]
+	//// éå†1ï¼šä¸‹æ ‡ï¼‹[]
 	//for (size_t i = 0; i < st.size(); i++)
 	//{
 	//	cout << st[i] << " ";
@@ -131,7 +131,7 @@ int main()
 	//}
 	//cout << endl;
 	//
-	//// ±éÀú2£ºµü´úÆ÷
+	//// éå†2ï¼šè¿­ä»£å™¨
 	//string::iterator it = st.begin();
 	////auto it = st.begin();
 	//while (it != st.end())
@@ -156,19 +156,19 @@ int main()
 	//}
 	//cout << endl;
 
-	//// ±éÀú3£ºautoÓï·¨ÌÇ(C++11) -> µ×²ãÆäÊµÊÇµü´úÆ÷
+	//// éå†3ï¼šautoè¯­æ³•ç³–(C++11) -> åº•å±‚å…¶å®æ˜¯è¿­ä»£å™¨
 	//for (auto e : st)
 	//{
 	//	cout << e << " ";
 	//}
 	//cout << endl;
 
-	//// ·´Ïò±éÀú£¿ ·´Ïòµü´úÆ÷
+	//// åå‘éå†ï¼Ÿ åå‘è¿­ä»£å™¨
 	//string::reverse_iterator rit = st.rbegin();
 	////auto rit = st.rbegin();
 	//while (rit != st.rend())
 	//{
-	//	//*rit += 1; //¿É¶Á¿ÉĞ´
+	//	//*rit += 1; //å¯è¯»å¯å†™
 	//	cout << *rit << " ";
 	//	rit++;
 	//}
@@ -177,23 +177,23 @@ int main()
 
 
 	string st1("hello world");
-	//constµü´úÆ÷£º¿É¶Á²»¿É¸ÄĞ´
+	//constè¿­ä»£å™¨ï¼šå¯è¯»ä¸å¯æ”¹å†™
 	string::const_iterator it = st1.begin();
 	//auto it = st.begin();
 	while (it != st1.end())
 	{
-		//*it += 1; //²»¿É¸ÄĞ´£¬±àÒë²»Í¨¹ı
+		//*it += 1; //ä¸å¯æ”¹å†™ï¼Œç¼–è¯‘ä¸é€šè¿‡
 		cout << *it << " ";
 		it++;
 	}
 	cout << endl;
 
-	//·´Ïò±éÀú£¬¿É¶Á²»¿ÉĞ´£¬const·´Ïòµü´úÆ÷
+	//åå‘éå†ï¼Œå¯è¯»ä¸å¯å†™ï¼Œconståå‘è¿­ä»£å™¨
 	string::const_reverse_iterator rit = st1.rbegin();
 	// auto rit = st1.rbegin();
 	while (rit != st1.rend())
 	{
-		//*rit += 1;  //²»¿É¸ÄĞ´£¬±àÒë²»Í¨¹ı
+		//*rit += 1;  //ä¸å¯æ”¹å†™ï¼Œç¼–è¯‘ä¸é€šè¿‡
 		cout << *rit << " ";
 		rit++;
 	}
