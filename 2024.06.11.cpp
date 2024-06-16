@@ -16,19 +16,19 @@ using namespace std;
 //
 //class Date {
 //public:
-//	/*Date(int year = 0, int month = 1, int day = 1) // ¹¹Ôìº¯Êı¸³³õÖµ
+//	/*Date(int year = 0, int month = 1, int day = 1) // æ„é€ å‡½æ•°èµ‹åˆå€¼
 //	{
 //		_year = year;
 //		_month = month;
 //		_day = day;
 //	}*/
 //
-//	Date(int year = 0, int month = 1, int day = 1 ,int a, int n) // ³õÊ¼»¯ÁĞ±í¸³³õÖµ 
-//		:_t1(1,2,3) // ³ÉÔ±±äÁ¿ÔÚÀàÖĞÉùÃ÷´ÎĞò¾ÍÊÇÆäÔÚ³õÊ¼»¯ÁĞ±íÖĞµÄ³õÊ¼»¯Ë³Ğò£¬ÓëÆäÔÚ³õÊ¼»¯ÁĞ±íÖĞµÄÏÈºó´ÎĞòÎŞ¹Ø
+//	Date(int year = 0, int month = 1, int day = 1 ,int a, int n) // åˆå§‹åŒ–åˆ—è¡¨èµ‹åˆå€¼ 
+//		:_t1(1,2,3) // æˆå‘˜å˜é‡åœ¨ç±»ä¸­å£°æ˜æ¬¡åºå°±æ˜¯å…¶åœ¨åˆå§‹åŒ–åˆ—è¡¨ä¸­çš„åˆå§‹åŒ–é¡ºåºï¼Œä¸å…¶åœ¨åˆå§‹åŒ–åˆ—è¡¨ä¸­çš„å…ˆåæ¬¡åºæ— å…³
 //		,_a(a)
 //		,_n(n)
 //	{
-//		 ÒÔÏÂ³ÉÔ±±äÁ¿¿ÉÍ¨¹ı³õÊ¼»¯ÁĞ±í¸³Öµ£¬Ò²¿ÉÈçÏÂ¸³Öµ
+//		 ä»¥ä¸‹æˆå‘˜å˜é‡å¯é€šè¿‡åˆå§‹åŒ–åˆ—è¡¨èµ‹å€¼ï¼Œä¹Ÿå¯å¦‚ä¸‹èµ‹å€¼
 //		_year = year;
 //		_month = month;
 //		_day = day;
@@ -38,10 +38,10 @@ using namespace std;
 //	int _month;
 //	int _day;
 //
-//	Ò»ÏÂÈıÀà³ÉÔ±£¬±ØĞëÊ¹ÓÃ³õÊ¼»¯ÁĞ±í¸³³õÖµ
-//	Time _t1;      //Ã»ÓĞÄ¬ÈÏ¹¹Ôìº¯Êı
-//	int& _a;       //ÒıÓÃ³ÉÔ±±äÁ¿
-//	const int _n;  //const³ÉÔ±±äÁ¿
+//	ä¸€ä¸‹ä¸‰ç±»æˆå‘˜ï¼Œå¿…é¡»ä½¿ç”¨åˆå§‹åŒ–åˆ—è¡¨èµ‹åˆå€¼
+//	Time _t1;      //æ²¡æœ‰é»˜è®¤æ„é€ å‡½æ•°
+//	int& _a;       //å¼•ç”¨æˆå‘˜å˜é‡
+//	const int _n;  //constæˆå‘˜å˜é‡
 //};
 
 
@@ -53,7 +53,7 @@ using namespace std;
 //		,_month(month)
 //		,_day(day)
 //		{}
-//	//explicit Date& operator=(const Date& d)    //ÓÃexplicitĞŞÊÎ¹¹Ôìº¯Êı£¬½«»á½ûÖ¹¹¹Ôìº¯ÊıµÄÒşÊ½×ª»»¡£
+//	//explicit Date& operator=(const Date& d)    //ç”¨explicitä¿®é¥°æ„é€ å‡½æ•°ï¼Œå°†ä¼šç¦æ­¢æ„é€ å‡½æ•°çš„éšå¼è½¬æ¢ã€‚
 //	Date& operator=(const Date& d)
 //	{
 //		if (this != &d)
@@ -79,9 +79,9 @@ using namespace std;
 //	Date d1(2024, 6, 11);
 //	Date d2(d1);
 //	Date d3 = d1;
-//	Date d4 = 2024;//´Ë´¦µ÷ÓÃ Date& operator=(const Date& d) º¯ÊıÊ±·¢ÉúÒşÊ½ÀàĞÍ×ª»»£ºDate tmp = (Date)2024;
-//	               //ÔÙ½«tmp´«²Î¸ø Date& operator=(const Date& d) º¯Êı
-//				   //ÓÃexplicitĞŞÊÎ¹¹Ôìº¯Êı£¬½«»á½ûÖ¹¹¹Ôìº¯ÊıµÄÒşÊ½×ª»»¡£
+//	Date d4 = 2024;//æ­¤å¤„è°ƒç”¨ Date& operator=(const Date& d) å‡½æ•°æ—¶å‘ç”Ÿéšå¼ç±»å‹è½¬æ¢ï¼šDate tmp = (Date)2024;
+//	               //å†å°†tmpä¼ å‚ç»™ Date& operator=(const Date& d) å‡½æ•°
+//				   //ç”¨explicitä¿®é¥°æ„é€ å‡½æ•°ï¼Œå°†ä¼šç¦æ­¢æ„é€ å‡½æ•°çš„éšå¼è½¬æ¢ã€‚
 //
 //	d1.Print();
 //	d2.Print();
@@ -92,7 +92,7 @@ using namespace std;
 //}
 
 
-//ÊµÏÖÒ»¸öÀà£¬¼ÆËã³ÌĞòÖĞ´´½¨³öÁË¶àÉÙ¸öÀà¶ÔÏó(Ò»)
+//å®ç°ä¸€ä¸ªç±»ï¼Œè®¡ç®—ç¨‹åºä¸­åˆ›å»ºå‡ºäº†å¤šå°‘ä¸ªç±»å¯¹è±¡(ä¸€)
 //class A
 //{
 //public:
@@ -104,7 +104,7 @@ using namespace std;
 //	{
 //		_n++;
 //	}
-//	static int _n;  // ´ËÊ±_n±ØĞë¹«ÓĞ£¬Ö÷º¯ÊıÖĞ²ÅÄÜÊä³ö_nµÄÖµ
+//	static int _n;  // æ­¤æ—¶_nå¿…é¡»å…¬æœ‰ï¼Œä¸»å‡½æ•°ä¸­æ‰èƒ½è¾“å‡º_nçš„å€¼
 //};
 //
 //int A::_n = 0;
@@ -117,7 +117,7 @@ using namespace std;
 //	cout << A::_n << endl;
 //}
 
-//ÊµÏÖÒ»¸öÀà£¬¼ÆËã³ÌĞòÖĞ´´½¨³öÁË¶àÉÙ¸öÀà¶ÔÏó(¶ş)
+//å®ç°ä¸€ä¸ªç±»ï¼Œè®¡ç®—ç¨‹åºä¸­åˆ›å»ºå‡ºäº†å¤šå°‘ä¸ªç±»å¯¹è±¡(äºŒ)
 class A
 {
 public:
@@ -126,7 +126,7 @@ public:
 	~A() { --_scount; }
 	static int GetACount() { return _scount; }
 private:
-	static int _scount;  //´ËÊ±_scount²»±Ø¹«ÓĞ£¬¿ÉÒÔÍ¨¹ıÔÚÀàÖĞ´´½¨º¯ÊıÀ´»ñÈ¡_scountµÄÖµ
+	static int _scount;  //æ­¤æ—¶_scountä¸å¿…å…¬æœ‰ï¼Œå¯ä»¥é€šè¿‡åœ¨ç±»ä¸­åˆ›å»ºå‡½æ•°æ¥è·å–_scountçš„å€¼
 };
 int A::_scount = 0;
 void main()
