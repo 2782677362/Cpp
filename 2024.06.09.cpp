@@ -5,7 +5,7 @@ using namespace std;
 
 class Date {
 public:
-	Date(int year = 0, int month = 1, int day = 1)//ÓëÀàÃûÍ¬ÃûµÄº¯ÊıÎª¹¹Ôìº¯Êı
+	Date(int year = 0, int month = 1, int day = 1)//ä¸ç±»ååŒåçš„å‡½æ•°ä¸ºæ„é€ å‡½æ•°
 	{
 		_year = year;
 		_month = month;
@@ -18,7 +18,7 @@ public:
 private:
 	int _year = 10;
 	int _month = 10;
-	int _day = 10;   //ÀàÖĞµÄ±äÁ¿¿ÉÒÔÈ±Ê¡
+	int _day = 10;   //ç±»ä¸­çš„å˜é‡å¯ä»¥ç¼ºçœ
 };
 
 void Date::Print()
