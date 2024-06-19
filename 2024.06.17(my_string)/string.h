@@ -12,6 +12,13 @@ namespace zxy
 		typedef char* iterator;
 		typedef const char* const_iterator;
 
+		void swap(string& s)
+		{
+			std::swap(_str, s._str);
+			std::swap(_size, s._size);
+			std::swap(_capacity, s._capacity);
+		}
+
 		iterator begin()
 		{
 			return _str;
@@ -40,12 +47,21 @@ namespace zxy
 			strcpy(_str, str);
 		}
 
-		string(const string& s)
+		//深拷贝：传统写法
+		/*string(const string& s)
 		{
 			_str = new char[s._size + 1];
 			strcpy(_str, s._str);
 			_size = s._size;
 			_capacity = s._capacity;
+		}*/
+
+		//深拷贝：现代写法
+		string(const string& s)
+			:_str(nullptr)
+		{
+			string tmp(s._str);
+			swap (tmp);
 		}
 
 		~string()
@@ -70,7 +86,8 @@ namespace zxy
 			return _str;
 		}
 
-		string& operator=(const string& s)
+		//深拷贝：传统写法
+		/*string& operator=(const string& s)
 		{
 			char* tmp = new char[s._capacity + 1];
 			strcpy(tmp, s._str);
@@ -80,6 +97,24 @@ namespace zxy
 			_size = s._size;
 			_capacity = s._capacity;
 
+			return *this;
+		}*/
+
+		//深拷贝：现代写法1:
+		/*string& operator=(const string& s)
+		{
+			if (this != &s)
+			{
+				string tmp(s);
+				swap(tmp);
+			}
+			return *this;
+		}*/
+
+		//深拷贝：现代写法2:
+		string& operator=(string s)
+		{
+			swap(s);
 			return *this;
 		}
 
@@ -140,13 +175,13 @@ namespace zxy
 			_size += strlen(str);
 		}
 
-		char operator[](size_t pos)
+		char& operator[](size_t pos)
 		{
 			assert( pos < _size);
 			return _str[pos];
 		}
 
-		const char operator[](size_t pos) const
+		const char& operator[](size_t pos) const
 		{
 			assert(pos < _size);
 			return _str[pos];
